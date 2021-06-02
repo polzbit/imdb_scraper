@@ -20,7 +20,7 @@ class ImdbBot:
             self.driver.quit()
         option = Options()
         option.headless = headless     # False - show selenium process, True - selenium work in background
-        self.driver = webdriver.Chrome(executable_path="E:\Programs\chromedriver\chromedriver.exe", options=option)
+        self.driver = webdriver.Chrome(executable_path="path-to-chromedriver.exe", options=option)
     
     def get_releases(self):
         self.set_driver(True)
@@ -32,9 +32,9 @@ class ImdbBot:
 
     def get_title(self, title):
         self.set_driver(True)
-        return ImdbTitleBot(self.driver).get_title(title)    # "https://www.imdb.com/title/tt9639470/"
+        return ImdbTitleBot(self.driver).get_title(title)    
     
     def watch_trailer(self, trailer):
         self.set_driver(False)
-        TrailerBot(self.driver).watch_trailer(trailer)      # "https://www.imdb.com/video/vi1389281305"
+        TrailerBot(self.driver).watch_trailer(trailer)      
 
